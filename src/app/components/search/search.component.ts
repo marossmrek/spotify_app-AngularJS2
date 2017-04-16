@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../../service/spotify.service';
+import { Artist } from './../../Artist';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -9,6 +10,7 @@ import { SpotifyService } from '../../service/spotify.service';
 export class SearchComponent implements OnInit {
 
   searchMusicByString : string;
+  searchResult : Artist[];
 
   constructor( private spotify: SpotifyService) { }
 
@@ -17,9 +19,10 @@ export class SearchComponent implements OnInit {
 
   searchMusic(){
   	this.spotify.searchMusic(this.searchMusicByString).subscribe(res => {
-		console.log(res.artists.items);
+  		console.log(res);
+		this.searchResult = res.artists.items;
   	}, err => {
-  		console.log('tento error: ' + err);
+  		this.searchResult = [];
   	});
   }
 

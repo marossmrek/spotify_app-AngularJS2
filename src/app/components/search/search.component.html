@@ -5,3 +5,23 @@
 		<input (keyup)="searchMusic()" type="text" name="search" [(ngModel)]="searchMusicByString" class="form-control" placeholder="Search music?"/>
 
 </form>
+
+<!-- <ul *ngIf="searchResult" class="list-group">
+	<li *ngFor="let res of searchResult" class="list-group-item">{{res.name}}</li>
+</ul> -->
+
+<div *ngIf="searchResult">
+	<div *ngFor="let res of searchResult">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="well">
+					<h4><a href="#">{{res.name}}</a></h4>
+					<div>
+						<strong>Genre:</strong>
+						<span *ngFor="let genre of res.genres">{{genre}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
