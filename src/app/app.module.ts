@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SearchComponent } from './components/search/search.component';
 
 import { SpotifyService } from './service/spotify.service';
+import { ArtistComponent } from './components/artist/artist.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SpotifyService } from './service/spotify.service';
     AppComponent,
     NavbarComponent,
     AboutComponent,
-    SearchComponent
+    SearchComponent,
+    ArtistComponent
   ],
   imports: [
     BrowserModule,
