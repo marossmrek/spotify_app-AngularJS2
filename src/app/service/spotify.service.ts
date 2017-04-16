@@ -20,4 +20,9 @@ export class SpotifyService {
   	return this.http.get(this.searchUrl).map(res => res.json());
   }
 
+  getAlbumById(id:string){
+	this.searchUrl="https://api.spotify.com/v1/artists/"+id+"/albums";
+  	return this.http.get(this.searchUrl).map(res => res.json());
+  }
+
 }

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../../service/spotify.service';
-import { Router } from '@angular/router';
 import { Artist } from '../../Artist';
 import { Albums } from '../../Albums';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
 
@@ -25,6 +24,9 @@ export class ArtistComponent implements OnInit {
       .map(params => params['id']).subscribe((id)=>{
       	this.spotify.getArtistById(id).subscribe( artist => {
       		this.artist = artist;
+      	});
+      	this.spotify.getAlbumById(id).subscribe( albums => {
+      		this.albums = albums.items;
       	});
     });
   }
