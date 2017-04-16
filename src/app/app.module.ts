@@ -12,6 +12,7 @@ import { SearchComponent } from './components/search/search.component';
 
 import { SpotifyService } from './service/spotify.service';
 import { ArtistComponent } from './components/artist/artist.component';
+import { AlbumComponent } from './components/album/album.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ArtistComponent } from './components/artist/artist.component';
     NavbarComponent,
     AboutComponent,
     SearchComponent,
-    ArtistComponent
+    ArtistComponent,
+    AlbumComponent
   ],
   imports: [
     BrowserModule,

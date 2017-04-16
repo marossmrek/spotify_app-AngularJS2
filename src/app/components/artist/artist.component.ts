@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../../service/spotify.service';
-import { Artist } from '../../Artist';
-import { Albums } from '../../Albums';
 import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
@@ -13,9 +11,9 @@ import 'rxjs/add/operator/switchMap';
 })
 export class ArtistComponent implements OnInit {
 
-  id:string;
-  artist: Artist[];
-  albums: Albums[];
+  id: string;
+  artist: any[];
+  albums: any[];
 
   constructor(  private spotify: SpotifyService, private route: ActivatedRoute ) { }
 
